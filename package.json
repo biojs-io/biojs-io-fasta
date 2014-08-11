@@ -32,7 +32,7 @@
   "scripts": {
     "test": "mocha --ui qunit --reporter spec",
     "prepublish":   "coffee --bare --compile --output lib/ src/*.coffee",
-    "build-browser": "browserify -t coffeeify --extension='.coffee'  browser.js > build/biojs_io_fasta.min.js"
+    "build-browser": "mkdir -p build; browserify -t coffeeify --extension='.coffee'  browser.js > build/biojs_io_fasta.min.js"
   },
   "license": "Apache 2"
 }
