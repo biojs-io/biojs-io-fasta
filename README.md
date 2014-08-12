@@ -22,8 +22,14 @@ npm run build-browser
 
 The namespace is `biojs.io.fasta`.
 
-How-to
+Parsing
 ------
+
+```
+var Fasta = require('biojs-io-fasta').parse;
+```
+
+For browser, replace `Fasta` with `biojs.io.fasta.parse`
 
 ### 1. read a url
 
@@ -37,6 +43,19 @@ Fasta.read(url, function(seqs) { }
 
 ```
 var seqs = Fasta.parse(str);
+```
+
+Writing
+------
+
+```
+var Fasta = require('biojs-io-fasta').writer;
+```
+
+For browser, replace `Fasta` with `biojs.io.fasta.writer`
+
+```
+var text = Fasta.export(seqs);
 ```
 
 Sequence object
