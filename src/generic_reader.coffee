@@ -8,8 +8,8 @@ class GenericReader
     xhr(url,onret)
 
   @_onRetrieval: (text, callback) ->
-    start = new Date().getTime()
+    #start = new Date().getTime()
     rText = @parse(text)
-    end = new Date().getTime()
-    console.log "Parsing time: #{(end - start)} ms"
+    #end = new Date().getTime()
+    #console.log "Parsing time: #{(end - start)} ms"
     callback rText
