@@ -1,7 +1,7 @@
 {
   "name": "biojs-io-fasta",
   "description": "Parses FASTA files",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "homepage": "http://github.com/biojs/biojs-io-fasta",
   "repository": {
     "type": "git",

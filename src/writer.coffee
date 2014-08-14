@@ -1,4 +1,4 @@
-utils = require("./utils")
+Utils = require("./utils")
 
 module.exports =
   class FastaExporter
