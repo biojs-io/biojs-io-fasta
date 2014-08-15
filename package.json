@@ -1,15 +1,15 @@
 {
   "name": "biojs-io-fasta",
   "description": "Parses FASTA files",
-  "version": "0.0.8",
-  "homepage": "http://github.com/biojs/biojs-io-fasta",
+  "version": "0.0.9",
+  "homepage": "http://github.com/greenify/biojs-io-fasta",
   "repository": {
     "type": "git",
-    "url": "git://github.com/biojs/biojs-io-fasta"
+    "url": "git://github.com/greenify/biojs-io-fasta"
   },
   "author": {
     "name": "greenify",
-    "email": "biojs-technical@googlegroups.com"
+    "email": "greeenify@gmail.com"
   },
   "dependencies": {
     "biojs-model": "0.0.1",
