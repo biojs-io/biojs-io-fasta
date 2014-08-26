@@ -30,9 +30,9 @@
   ],
   "main": "lib/index.js",
   "scripts": {
-    "test": "mocha --ui qunit --reporter spec",
-    "prepublish":   "npm run build-browser;coffee --bare --compile --output lib/ src/*.coffee",
-    "build-browser": "mkdir -p build; browserify -t coffeeify --extension='.coffee'  browser.js > build/biojs_io_fasta.min.js"
+    "test": "node_modules/mocha/bin/mocha --ui qunit --reporter spec",
+    "prepublish":   "npm run build-browser; node_modules/coffee-script/bin/coffee --bare --compile --output lib/ src/*.coffee",
+    "build-browser": "mkdir -p build; node_modules/browserify/bin/cmd.js -t coffeeify --extension='.coffee'  browser.js > build/biojs_io_fasta.min.js"
   },
   "license": "Apache 2"
 }
