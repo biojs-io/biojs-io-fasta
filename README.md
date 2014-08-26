@@ -14,7 +14,7 @@ npm install biojs-io-fasta
 Use in your browser
 -------------------
 
-[Download](https://drone.io/github.com/biojs/biojs-io-fasta/files) a compiled version for browser use.
+[Download](https://drone.io/github.com/greenify/biojs-io-fasta/files) a compiled version for browser use.
 
 ```
 npm run build-browser
