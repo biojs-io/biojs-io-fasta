@@ -22,6 +22,10 @@ npm run build-browser
 
 The namespace is `biojs.io.fasta`.
 
+You can find a [JSBin](http://jsbin.com/soyoxexenaze/1/edit) to play around with it.
+
+Remember that you need [CORS](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing) to download files from other servers on the web.
+
 Parsing
 ------
 
