@@ -7,7 +7,9 @@ module.exports =
 
     @parse: (text) ->
       seqs = []
-      text = text.split("\n") if Object::toString.call(text) is '[object Array]'
+
+      text = text.split("\n") unless Object::toString.call(text) is '[object Array]'
+
       for line in text
         # check for header
         if line[0] is ">" or line[0] is ";"

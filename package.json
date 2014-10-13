@@ -1,7 +1,7 @@
 {
   "name": "biojs-io-fasta",
   "description": "Parses FASTA files",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "homepage": "http://github.com/greenify/biojs-io-fasta",
   "repository": {
     "type": "git",
@@ -36,7 +36,7 @@
    },
   "main": "lib/index.js",
   "scripts": {
-    "test": "node_modules/mocha/bin/mocha --ui qunit --reporter spec",
+    "test": "node_modules/mocha/bin/mocha --ui qunit --reporter spec -C",
     "prepublish":   "npm run build-browser; node_modules/coffee-script/bin/coffee --bare --compile --output lib/ src/*.coffee",
     "build-browser": "mkdir -p build; node_modules/browserify/bin/cmd.js -t coffeeify --extension='.coffee'  browser.js > build/biojs_io_fasta.min.js"
   },
