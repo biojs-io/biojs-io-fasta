@@ -1,7 +1,7 @@
 {
   "name": "biojs-io-fasta",
   "description": "Parses FASTA files",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "homepage": "http://github.com/greenify/biojs-io-fasta",
   "repository": {
     "type": "git",
@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "biojs-model": "0.0.1",
-    "nets": "^1.0.0"
+    "xhr": "^1.17.0"
   },
   "devDependencies": {
     "browserify": "~4.2.0",
@@ -29,15 +29,15 @@
     "sequence"
   ],
   "shields": {
-  	"build": {
-  	  "img": "https://travis-ci.org/greenify/biojs-io-fasta.svg?branch=master",
-  	  "href": "https://travis-ci.org/greenify/biojs-io-fasta"
-	 }
-   },
+    "build": {
+      "img": "https://travis-ci.org/greenify/biojs-io-fasta.svg?branch=master",
+      "href": "https://travis-ci.org/greenify/biojs-io-fasta"
+    }
+  },
   "main": "lib/index.js",
   "scripts": {
     "test": "node_modules/mocha/bin/mocha --ui qunit --reporter spec -C",
-    "prepublish":   "npm run build-browser; node_modules/coffee-script/bin/coffee --bare --compile --output lib/ src/*.coffee",
+    "prepublish": "npm run build-browser; node_modules/coffee-script/bin/coffee --bare --compile --output lib/ src/*.coffee",
     "build-browser": "mkdir -p build; node_modules/browserify/bin/cmd.js -t coffeeify --extension='.coffee'  browser.js > build/biojs_io_fasta.min.js"
   },
   "license": "Apache 2"

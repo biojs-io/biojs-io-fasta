@@ -1,4 +1,4 @@
-xhr = require('nets')
+xhr = require('xhr')
 
 module.exports =
 class GenericReader
