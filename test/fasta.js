@@ -18,7 +18,7 @@ suite("Fasta");
 
 test('test parsing of sample fasta file', function(done){
   request(testUrl, function(err,resp,body){
-    var seqs =Fasta.parse.parse(body);
+    var seqs = Fasta.parse(body);
     assert.equal(13, seqs.length, "wrong seq number");
     assert.equal(seqs[0].seq.substring(0, 60), "MASLITTKAMMSHHHVLSSTRITTLYSDNSIGDQQIKTKPQVPHRLFARRIFGVTRAVIN");
     assert.equal(seqs[12].seq, "MKTLLLTLVVVTIVYLDLGYTTKCYNHQSTTPETTEICPDSGYFCYKSSWIDGREGRIERGCTFTCPELTPNGKYVYCCRRDKCNQ");
@@ -31,7 +31,7 @@ test("test parsing of a file with fs", function(done) {
     if (err) {
       return console.log(err);
     }
-    var seqs = Fasta.parse.parse(data);
+    var seqs = Fasta.parse(data);
     assert.equal(13, seqs.length, "wrong seq number");
     assert.equal(seqs[0].seq.substring(0, 60), "MASLITTKAMMSHHHVLSSTRITTLYSDNSIGDQQIKTKPQVPHRLFARRIFGVTRAVIN");
     assert.equal(seqs[12].seq, "MKTLLLTLVVVTIVYLDLGYTTKCYNHQSTTPETTEICPDSGYFCYKSSWIDGREGRIERGCTFTCPELTPNGKYVYCCRRDKCNQ");

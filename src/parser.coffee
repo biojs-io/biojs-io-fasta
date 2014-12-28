@@ -1,34 +1,42 @@
-Str = require("./strings")
 GenericReader = require("./generic_reader")
 Seq = require("biojs-model").seq
+st = require "biojs-utils-seqtools"
 
-module.exports =
-  class Fasta extends GenericReader
+module.exports = class Fasta extends GenericReader
 
-    @parse: (text) ->
-      seqs = []
+  @parse: (text) ->
+    seqs = []
 
-      text = text.split("\n") unless Object::toString.call(text) is '[object Array]'
+    # catch empty string
+    if !text || text.length is 0
+      return []
 
-      for line in text
-        # check for header
-        if line[0] is ">" or line[0] is ";"
+    text = text.split("\n") unless Object::toString.call(text) is '[object Array]'
 
-          label = line[1..]
-          currentSeq = new Seq("", label, seqs.length)
-          seqs.push currentSeq
+    for line in text
+      # check for header
+      if line[0] is ">" or line[0] is ";"
 
-          # extract IDs and push them to the meta dict
-          if Str.contains "|", line
-            identifiers = label.split("|")
-            k = 1
-            while k < identifiers.length
-              database = identifiers[k]
-              databaseID = identifiers[(k + 1)]
-              currentSeq.meta[database] = databaseID
-              k += 2
-            # assume the last entry is the label
-            currentSeq.name = identifiers[identifiers.length - 1]
-        else
-          currentSeq.seq += line
-      return seqs
+        label = line[1..]
+        # extract IDs and push them to the meta dict
+        [label, meta] = st.getMeta(label)
+
+        currentSeq = new Seq("", label, seqs.length)
+        if Object.keys(meta) > 0
+          currentSeq.meta = meta
+        seqs.push currentSeq
+      else
+        currentSeq.seq += line
+    return seqs
+
+  @write: (seqs, access) ->
+    text = ""
+    for seq in seqs
+      seq = access(seq) if access?
+      #FASTA header
+      text += ">#{seq.name}\n"
+      # seq
+      text += (st.splitNChars seq.seq, 80).join "\n"
+
+      text += "\n"
+    return text

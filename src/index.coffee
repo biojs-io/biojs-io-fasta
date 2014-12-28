@@ -1,2 +1,1 @@
-module.exports.parse = require "./parser"
-module.exports.writer = require "./writer"
+module.exports = require "./parser"
