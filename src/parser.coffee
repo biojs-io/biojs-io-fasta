@@ -1,5 +1,4 @@
 GenericReader = require("./generic_reader")
-Seq = require("biojs-model").seq
 st = require "biojs-utils-seqtools"
 
 module.exports = class Fasta extends GenericReader
