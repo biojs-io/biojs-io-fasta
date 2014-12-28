@@ -1,7 +1,7 @@
 {
   "name": "biojs-io-fasta",
   "description": "Parses FASTA files",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "http://github.com/greenify/biojs-io-fasta",
   "repository": {
     "type": "git",
@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "biojs-model": "0.0.1",
-    "biojs-utils-seqtools": "^0.1.2",
+    "biojs-utils-seqtools": "^0.1.3",
     "xhr": "^1.17.0"
   },
   "devDependencies": {

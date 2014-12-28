@@ -21,7 +21,7 @@ module.exports = class Fasta extends GenericReader
         # extract IDs and push them to the meta dict
         [label, meta] = st.getMeta(label)
 
-        currentSeq = new Seq("", label, seqs.length)
+        currentSeq = new st.model("", label, seqs.length)
         if Object.keys(meta) > 0
           currentSeq.meta = meta
         seqs.push currentSeq
