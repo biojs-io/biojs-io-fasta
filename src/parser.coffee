@@ -23,6 +23,9 @@ module.exports = class Fasta extends GenericReader
 
         currentSeq = new st.model("", label, seqs.length)
         currentSeq.ids = obj.ids || {}
+        keys = Object.keys currentSeq.ids
+        if keys > 0
+          currentSeq.id = currentSeq.ids[keys[0]]
         currentSeq.details = obj.details || {}
         seqs.push currentSeq
       else
