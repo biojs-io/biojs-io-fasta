@@ -16,15 +16,14 @@ Use in your browser
 
 [Download](https://drone.io/github.com/greenify/biojs-io-fasta/files) a compiled version for browser use.
 
+or link to a CDN version
+
 ```
-npm run build-browser
+<script src="http://wzrd.in/bundle/biojs-io-fasta@latest"></script>
 ```
 
-The namespace is `biojs.io.fasta`.
-
-You can find a [JSBin](http://jsbin.com/soyoxexenaze/1/edit) to play around with it.
-
-Remember that you need [CORS](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing) to download files from other servers on the web.
+* You can find a [JSBin](http://jsbin.com/soyoxexenaze/1/edit) to play around with it.
+* Remember that you need [CORS](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing) to download files from other servers on the web.
 
 Parsing
 ------
@@ -64,3 +63,15 @@ Sequence object
   id: "unique id"
 }
 ```
+
+Develop
+--------
+
+```
+npm run build-browser
+```
+
+License
+--------
+
+Apache 2
