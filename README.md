@@ -30,10 +30,8 @@ Parsing
 ------
 
 ```
-var Fasta = require('biojs-io-fasta').parse;
+var Fasta = require('biojs-io-fasta');
 ```
-
-For browser, replace `Fasta` with `biojs.io.fasta.parse`
 
 ### 1. read a url
 
@@ -53,12 +51,6 @@ Writing
 ------
 
 ```
-var Fasta = require('biojs-io-fasta').writer;
-```
-
-For browser, replace `Fasta` with `biojs.io.fasta.writer`
-
-```
 var text = Fasta.export(seqs);
 ```
 
@@ -66,7 +58,9 @@ Sequence object
 ---------------
 
 ```
-this.seq 
-this.name 
-this.id 
+{
+  seq: "ABC",
+  name: "awesome seq",
+  id: "unique id"
+}
 ```
