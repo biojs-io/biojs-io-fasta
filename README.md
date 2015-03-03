@@ -40,7 +40,9 @@ Fasta.read("https://raw.githubusercontent.com/greenify/biojs-io-fasta/master/tes
 If callback is undefined, `read` returns a promise.
 
 ```
-Fasta.read("https://raw.githubusercontent.com/greenify/biojs-io-fasta/master/test/foo.fasta").then(function(model) {
+var p = Fasta.read("https://raw.githubusercontent.com/greenify/biojs-io-fasta/master/test/foo.fasta");
+// ...
+p.then(function(model) {
 	// model is the parsed url
 }, function(err){
 	console.error("err happened during downloading", err);
