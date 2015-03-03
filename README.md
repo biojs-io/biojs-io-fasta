@@ -21,29 +21,40 @@ Use in your browser
 * You can find a [JSBin](http://jsbin.com/xohana/1/edit?js,console) to play around with it.
 * Remember that you need [CORS](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing) to download files from other servers on the web
 
-Parsing
+Methods
 ------
 
 ```
 var Fasta = require('biojs-io-fasta');
 ```
 
-### 1. read a url
+#### `read(url)`
+
+Parses an url an calls your `parse` method with the returned body.
 
 ```
-Fasta.read(url, function(seqs) { }
+Fasta.read("https://raw.githubusercontent.com/greenify/biojs-io-fasta/master/test/foo.fasta", function(err, model) {
+	// model is the parsed url
+});
+```
+If callback is undefined, `read` returns a promise.
+
+```
+Fasta.read("https://raw.githubusercontent.com/greenify/biojs-io-fasta/master/test/foo.fasta").then(function(model) {
+	// model is the parsed url
+}, function(err){
+	console.error("err happened during downloading", err);
+});
 ```
 
-`function` is your async callback.
-
-### 2. parse string
+### `parse(str)`
 
 ```
 var seqs = Fasta.parse(str);
 ```
 
-Writing
-------
+### `export(model)`
+
 
 ```
 var text = Fasta.export(seqs);
