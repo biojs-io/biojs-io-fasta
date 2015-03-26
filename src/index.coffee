@@ -1,7 +1,7 @@
 GenericReader = require "biojs-io-parser"
 st = require "msa-seqtools"
 
-module.exports =
+module.exports = Fasta =
 
   parse: (text) ->
     seqs = []
@@ -44,4 +44,4 @@ module.exports =
       text += "\n"
     return text
 
-GenericReader.mixin @
+GenericReader.mixin Fasta
