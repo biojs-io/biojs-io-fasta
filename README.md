@@ -18,7 +18,7 @@ Use in your browser
 <script src="http://wzrd.in/bundle/biojs-io-fasta@latest"></script>
 ```
 
-* You can find a [JSBin](http://jsbin.com/xohana/1/edit?js,console) to play around with it.
+* You can find a [JSBin](http://jsbin.com/vetamigere/edit?js,console) to play around with it.
 * Remember that you need [CORS](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing) to download files from other servers on the web
 
 Methods
