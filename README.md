@@ -62,6 +62,32 @@ var seqs = Fasta.parse(str);
 var text = Fasta.export(seqs);
 ```
 
+### `extend(customParser)`
+
+Thanks to [@sillitoe](https://github.com/sillitoe) you can provide a custom parser
+if your FASTA header is formatted "in weird and wonderful ways".
+
+```
+var customGetMeta = function(header) {
+	return {
+      id: "id",
+      name: "name",
+      // optional
+      details: {
+		foo: "bar"
+      },
+      // optional
+      ids: {
+		customId: "bar"
+      }
+    };
+}
+var altFasta = Fasta.extend(customGetMeta);
+```
+
+Take a look at [tests](https://github.com/wilzbach/biojs-io-fasta/blob/master/test/fasta.js#L56)
+for a better example of such a parser;
+
 Sequence object
 ---------------
 
@@ -75,6 +101,15 @@ Sequence object
 
 Develop
 --------
+
+Install dependencies and execute the tests:
+
+```
+npm install
+npm script compile && npm test
+```
+
+To build a JS file for the browser, execute:
 
 ```
 npm run build-browser

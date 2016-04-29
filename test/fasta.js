@@ -36,7 +36,7 @@ test("test parsing of a file with fs", function(done) {
     var firstseq = seqs[0];
     assert.equal(13, seqs.length, "wrong seq number");
     assert.equal(seqs[0].seq.substring(0, 60), "MASLITTKAMMSHHHVLSSTRITTLYSDNSIGDQQIKTKPQVPHRLFARRIFGVTRAVIN");
-    assert.equal(seqs[12].seq, "MKTLLLTLVVVTIVYLDLGYTTKCYNHQSTTPETTEICPDSGYFCYKSSWIDGREGRIERGCTFTCPELTPNGKYVYCCRRDKCNQ");    
+    assert.equal(seqs[12].seq, "MKTLLLTLVVVTIVYLDLGYTTKCYNHQSTTPETTEICPDSGYFCYKSSWIDGREGRIERGCTFTCPELTPNGKYVYCCRRDKCNQ");
     done();
   })
 });
@@ -52,17 +52,17 @@ MKTLLLTLVVVTIVYLDLGYTTKCYNHQSTTPETTEICPDSGYFCYKSSWIDGREGRIERGCTFTCPELTPNGKYVYCCR
 ";
 
   var visit_counter = 0;
-  
+
   var customGetMeta = function(header) {
-    
+
     visit_counter++;
-        
+
     var id, name, details = {}, ids = {};
-        
+
     var parts = header.split(/\s+/);
     var id_str = parts[0];
     var details_str = parts[1];
-    
+
     if ( id_str ) {
       var id_parts = id_str.split( '|' );
       db = id_parts[0];
@@ -71,9 +71,9 @@ MKTLLLTLVVVTIVYLDLGYTTKCYNHQSTTPETTEICPDSGYFCYKSSWIDGREGRIERGCTFTCPELTPNGKYVYCCR
       ids[ db ] = db_version;
       name = id;
     }
-        
+
     if ( details_str ) {
-      var details_parts = details_str.split( ';' );    
+      var details_parts = details_str.split( ';' );
       details_parts.forEach( function(detail_str) {
         var detail_kv_parts = detail_str.split('=');
         var key = detail_kv_parts[0];
@@ -81,28 +81,27 @@ MKTLLLTLVVVTIVYLDLGYTTKCYNHQSTTPETTEICPDSGYFCYKSSWIDGREGRIERGCTFTCPELTPNGKYVYCCR
         details[ key.toLowerCase() ] = values;
       });
     }
-    
+
     return {
       id: id,
       name: name,
-      details: details, 
+      details: details,
       ids: ids
     };
   };
 
-  var altFasta = _.extend( {}, Fasta );
-  altFasta.getMeta = customGetMeta;
-  
-  var seqs = altFasta.parse(data);  
-  assert.equal(visit_counter, 2, "visited getMeta wrong number of times" );  
+  var altFasta = Fasta.extend(customGetMeta);
+
+  var seqs = altFasta.parse(data);
+  assert.equal(visit_counter, 2, "visited getMeta wrong number of times" );
   assert.equal(2, seqs.length, "wrong seq number");
   var firstseq = seqs[0];
-    
+
   assert.equal(firstseq.id, '1abcA01');
   assert.equal(firstseq.seq, 'MKTLLLTLVVVTIVYLDLGYTTKCYNHQSTTPETTEICPDSGYFCYKSSWIDGREGRIERGCTFTCPELTPNGKYVYCCRRDKCN');
   assert.deepEqual(firstseq.ids, { database: 'v1.2' } );
   assert.deepEqual(firstseq.details, { go: [ 'GO:012345', 'GO:023456' ], ec: [ '1.2.3.4' ] } );
-  
+
   done();
 })
 

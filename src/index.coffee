@@ -1,10 +1,16 @@
 GenericReader = require "biojs-io-parser"
 st = require "msa-seqtools"
+extend = require "./extend"
 
 module.exports = Fasta =
 
   getMeta: st.getMeta
-  
+
+  extend: (metaParser) ->
+  	customFasta = extend(Fasta)
+  	Fasta.getMeta = metaParser
+  	return customFasta
+
   parse: (text) ->
     seqs = []
 
