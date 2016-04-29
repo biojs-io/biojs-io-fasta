@@ -3,6 +3,8 @@ st = require "msa-seqtools"
 
 module.exports = Fasta =
 
+  getMeta: st.getMeta
+  
   parse: (text) ->
     seqs = []
 
@@ -12,20 +14,19 @@ module.exports = Fasta =
 
     text = text.split("\n") unless Object::toString.call(text) is '[object Array]'
 
+    getMeta = this.getMeta
+
     for line in text
       # check for header
       if line[0] is ">" or line[0] is ";"
 
         label = line[1..]
         # extract IDs and push them to the meta dict
-        obj = st.getMeta(label)
+        obj = getMeta(label)
         label = obj.name
-
-        currentSeq = new st.model("", label, seqs.length)
+        id = obj.id || seqs.length
+        currentSeq = new st.model( "", obj.name, id )
         currentSeq.ids = obj.ids || {}
-        keys = Object.keys currentSeq.ids
-        if keys.length > 0
-          currentSeq.id = currentSeq.ids[keys[0]]
         currentSeq.details = obj.details || {}
         seqs.push currentSeq
       else

@@ -22,7 +22,8 @@
     "mocha": "~1.20.1",
     "nock": "^0.43.0",
     "request": "^2.49.0",
-    "uglify-js": "~2.4.15"
+    "uglify-js": "~2.4.15",
+    "underscore": "^1.8.3"
   },
   "keywords": [
     "biojs",
