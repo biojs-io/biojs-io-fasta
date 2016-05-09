@@ -19,7 +19,7 @@ module.exports = Fasta =
 
     text = text.split("\n") unless Object::toString.call(text) is '[object Array]'
 
-    getMeta = this.getMeta
+    getMeta = Fasta.getMeta
 
     for line in text
       # check for header
