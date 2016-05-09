@@ -1,10 +1,10 @@
 biojs-io-fasta
 ----------------
 
-[![Build Status](https://drone.io/github.com/greenify/biojs-io-fasta/status.png)](https://drone.io/github.com/biojs/biojs-io-fasta/latest)
+[![Build Status](https://drone.io/github.com/biojs-io/biojs-io-fasta/status.png)](https://drone.io/github.com/biojs/biojs-io-fasta/latest)
 [![NPM version](http://img.shields.io/npm/v/biojs-io-fasta.svg)](https://www.npmjs.org/package/biojs-io-fasta)
-[![Dependencies](https://david-dm.org/greenify/biojs-io-fasta.png)](https://david-dm.org/biojs/biojs-io-fasta)
-[![Code Climate](https://codeclimate.com/github/greenify/biojs-io-fasta/badges/gpa.svg)](https://codeclimate.com/github/biojs/biojs-io-fasta)
+[![Dependencies](https://david-dm.org/biojs-io/biojs-io-fasta.png)](https://david-dm.org/biojs/biojs-io-fasta)
+[![Code Climate](https://codeclimate.com/github/biojs-io/biojs-io-fasta/badges/gpa.svg)](https://codeclimate.com/github/biojs/biojs-io-fasta)
 [![NPM downloads](http://img.shields.io/npm/dm/biojs-io-fasta.svg)](https://www.npmjs.org/package/biojs-io-fasta)
 
 ```
@@ -33,14 +33,14 @@ var Fasta = require('biojs-io-fasta');
 Parses an url an calls your `parse` method with the returned body.
 
 ```
-Fasta.read("https://raw.githubusercontent.com/greenify/biojs-io-fasta/master/test/foo.fasta", function(err, model) {
+Fasta.read("https://raw.githubusercontent.com/biojs-io/biojs-io-fasta/master/test/foo.fasta", function(err, model) {
 	// model is the parsed url
 });
 ```
 If callback is undefined, `read` returns a promise.
 
 ```
-var p = Fasta.read("https://raw.githubusercontent.com/greenify/biojs-io-fasta/master/test/foo.fasta");
+var p = Fasta.read("https://raw.githubusercontent.com/biojs-io/biojs-io-fasta/master/test/foo.fasta");
 // ...
 p.then(function(model) {
 	// model is the parsed url
@@ -85,7 +85,7 @@ var customGetMeta = function(header) {
 var altFasta = Fasta.extend(customGetMeta);
 ```
 
-Take a look at [tests](https://github.com/wilzbach/biojs-io-fasta/blob/master/test/fasta.js#L56)
+Take a look at [tests](https://github.com/biojs-io/biojs-io-fasta/blob/master/test/fasta.js#L56)
 for a better example of such a parser;
 
 Sequence object
