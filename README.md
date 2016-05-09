@@ -1,7 +1,7 @@
 biojs-io-fasta
 ----------------
 
-[![Build Status](https://drone.io/github.com/biojs-io/biojs-io-fasta/status.png)](https://drone.io/github.com/biojs/biojs-io-fasta/latest)
+[![Build Status](https://travis-ci.org/biojs-io/biojs-io-fasta.svg?branch=master)](https://travis-ci.org/biojs-io/biojs-io-fasta)
 [![NPM version](http://img.shields.io/npm/v/biojs-io-fasta.svg)](https://www.npmjs.org/package/biojs-io-fasta)
 [![Dependencies](https://david-dm.org/biojs-io/biojs-io-fasta.png)](https://david-dm.org/biojs/biojs-io-fasta)
 [![Code Climate](https://codeclimate.com/github/biojs-io/biojs-io-fasta/badges/gpa.svg)](https://codeclimate.com/github/biojs/biojs-io-fasta)

@@ -1,11 +1,11 @@
 {
   "name": "biojs-io-fasta",
   "description": "Parses FASTA files",
-  "version": "0.1.14",
-  "homepage": "http://github.com/greenify/biojs-io-fasta",
+  "version": "0.1.17",
+  "homepage": "http://github.com/biojs-io/biojs-io-fasta",
   "repository": {
     "type": "git",
-    "url": "git://github.com/greenify/biojs-io-fasta"
+    "url": "git://github.com/biojs-io/biojs-io-fasta"
   },
   "author": {
     "name": "greenify",
@@ -32,8 +32,8 @@
   ],
   "shields": {
     "build": {
-      "img": "https://travis-ci.org/greenify/biojs-io-fasta.svg?branch=master",
-      "href": "https://travis-ci.org/greenify/biojs-io-fasta"
+      "img": "https://travis-ci.org/biojs-io/biojs-io-fasta.svg?branch=master",
+      "href": "https://travis-ci.org/biojs-io/biojs-io-fasta"
     }
   },
   "main": "lib/index.js",
